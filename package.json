@@ -25,7 +25,6 @@
     "clsx": "2.1.1",
     "eslint": "^9",
     "eslint-config-next": "16.3.4",
-    "eslint-plugin-perfectionist": "5.11.0",
     "eslint-plugin-tailwindcss": "4.4.0",
     "tailwind-merge": "3.6.0",
     "tailwindcss": "^4",

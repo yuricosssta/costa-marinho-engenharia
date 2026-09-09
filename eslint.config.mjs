@@ -2,7 +2,6 @@ import { defineConfig, globalIgnores } from "eslint/config";
 import nextVitals from "eslint-config-next/core-web-vitals";
 import nextTs from "eslint-config-next/typescript";
 import tailwindcss from "eslint-plugin-tailwindcss";
-import perfectionist from "eslint-plugin-perfectionist";
 
 const eslintConfig = defineConfig([
   ...nextVitals,
@@ -10,7 +9,6 @@ const eslintConfig = defineConfig([
   {
     plugins: {
       tailwindcss,
-      perfectionist,
     },
     settings: {
       tailwindcss: {
@@ -23,21 +21,6 @@ const eslintConfig = defineConfig([
       "tailwindcss/no-custom-classname": [
         "error",
         { whitelist: ["\\.typography$", "\\.loader$", "\\.bottom-0$", "inputs"] },
-      ],
-      "perfectionist/sort-imports": [
-        "error",
-        {
-          type: "natural",
-          order: "asc",
-          internalPattern: ["^@/"],
-          groups: [
-            ["builtin", "external"],
-            "internal",
-            ["parent", "sibling", "index"],
-            "style",
-          ],
-          newlinesBetween: 1,
-        },
       ],
     },
   },
