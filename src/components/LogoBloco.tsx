@@ -2,6 +2,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { z } from 'zod';
 
+import { cn } from '@/lib/utils';
+
 const logoPropsSchema = z.object({
   className: z.string().optional(),
   href: z.string().default('/'),
@@ -24,7 +26,10 @@ export function LogoBloco(props: LogoProps) {
   return (
     <Link
       href={href}
-      className={`group flex items-center transition-transform duration-300 hover:scale-[1.03] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-md ${className ?? ''}`}
+      className={cn(
+        "group flex items-center rounded-md transition-transform duration-300 hover:scale-[1.03] focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:outline-none active:scale-[0.98]",
+        className,
+      )}
       aria-label="Página Inicial da Costa Marinho Engenharia"
     >
       <div className="relative h-12 w-[280px]">
@@ -34,7 +39,7 @@ export function LogoBloco(props: LogoProps) {
           fill
           priority
           sizes="(max-width: 768px) 200px, 280px"
-          className={`object-contain ${themeClasses[theme]}`}
+          className={cn("object-contain", themeClasses[theme])}
         />
       </div>
     </Link>
