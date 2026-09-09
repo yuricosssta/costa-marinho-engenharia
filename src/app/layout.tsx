@@ -13,7 +13,7 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
   title: "Costa Marinho Engenharia",
-  description: "Construção civil, projetos estruturais e gestão de obras com rigor técnico e previsibilidade. Ecossistema Cazuá.",
+  description: "Construção civil, projetos estruturais e gestão de obras com rigor técnico e previsibilidade.",
 };
 
 export default function RootLayout({
