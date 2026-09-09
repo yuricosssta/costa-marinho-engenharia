@@ -1,17 +1,52 @@
 import { defineConfig, globalIgnores } from "eslint/config";
 import nextVitals from "eslint-config-next/core-web-vitals";
 import nextTs from "eslint-config-next/typescript";
+import tailwindcss from "eslint-plugin-tailwindcss";
+import perfectionist from "eslint-plugin-perfectionist";
 
 const eslintConfig = defineConfig([
   ...nextVitals,
   ...nextTs,
-  // Override default ignores of eslint-config-next.
+  {
+    plugins: {
+      tailwindcss,
+      perfectionist,
+    },
+    settings: {
+      tailwindcss: {
+        cssConfigPath: "./src/app/globals.css",
+      },
+    },
+    rules: {
+      "@typescript-eslint/no-unused-vars": "error",
+      "tailwindcss/classnames-order": "error",
+      "tailwindcss/no-custom-classname": [
+        "error",
+        { whitelist: ["\\.typography$", "\\.loader$", "\\.bottom-0$", "inputs"] },
+      ],
+      "perfectionist/sort-imports": [
+        "error",
+        {
+          type: "natural",
+          order: "asc",
+          internalPattern: ["^@/"],
+          groups: [
+            ["builtin", "external"],
+            "internal",
+            ["parent", "sibling", "index"],
+            "style",
+          ],
+          newlinesBetween: 1,
+        },
+      ],
+    },
+  },
   globalIgnores([
-    // Default ignores of eslint-config-next:
     ".next/**",
     "out/**",
     "build/**",
     "next-env.d.ts",
+    "src/types/**",
   ]),
 ]);
 

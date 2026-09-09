@@ -1,10 +1,11 @@
 // src/components/LeadForm.tsx
 'use client';
 
-import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { createLeadSchema, CreateLeadDto } from '@/validations/lead.zod';
 import { useState } from 'react';
+import { useForm } from 'react-hook-form';
+
+import { createLeadSchema, type CreateLeadDto } from '@/validations/lead.zod';
 
 export function LeadForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -39,54 +40,54 @@ export function LeadForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4 w-full max-w-md bg-white p-6 rounded-md shadow-sm border border-gray-200">
-      <h3 className="text-xl font-semibold font-montserrat text-[#15363D]">Solicite uma Avaliação</h3>
-      
+    <form onSubmit={handleSubmit(onSubmit)} className="flex w-full max-w-md flex-col gap-4 rounded-sm border border-border bg-card p-6 shadow-sm">
+      <h3 className="text-xl font-semibold text-primary">Solicite uma Avaliação</h3>
+
       <div>
-        <label className="block text-sm font-medium text-gray-700">Nome</label>
+        <label className="block text-sm font-medium text-foreground">Nome</label>
         <input
           {...register('name')}
-          className="mt-1 block w-full border border-gray-300 rounded-md p-2 focus:ring-[#15363D] focus:border-[#15363D]"
+          className="mt-1 block w-full rounded-md border border-input p-2 focus:border-primary focus:ring-primary"
         />
-        {errors.name && <span className="text-red-600 text-xs">{errors.name.message}</span>}
+        {errors.name && <span className="text-xs text-destructive">{errors.name.message}</span>}
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700">Telefone (Apenas números)</label>
+        <label className="block text-sm font-medium text-foreground">Telefone (Apenas números)</label>
         <input
           {...register('phone')}
-          className="mt-1 block w-full border border-gray-300 rounded-md p-2 focus:ring-[#15363D] focus:border-[#15363D]"
+          className="mt-1 block w-full rounded-md border border-input p-2 focus:border-primary focus:ring-primary"
         />
-        {errors.phone && <span className="text-red-600 text-xs">{errors.phone.message}</span>}
+        {errors.phone && <span className="text-xs text-destructive">{errors.phone.message}</span>}
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700">Tipo de Serviço</label>
+        <label className="block text-sm font-medium text-foreground">Tipo de Serviço</label>
         <select
           {...register('serviceType')}
-          className="mt-1 block w-full border border-gray-300 rounded-md p-2 focus:ring-[#15363D] focus:border-[#15363D]"
+          className="mt-1 block w-full rounded-md border border-input p-2 focus:border-primary focus:ring-primary"
         >
           <option value="">Selecione...</option>
           <option value="CONSTRUCTION">Construção e Execução</option>
           <option value="PROJECT">Projetos Estruturais</option>
           <option value="REPORT">Laudo e Investigação Patológica</option>
         </select>
-        {errors.serviceType && <span className="text-red-600 text-xs">{errors.serviceType.message}</span>}
+        {errors.serviceType && <span className="text-xs text-destructive">{errors.serviceType.message}</span>}
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700">Breve Descrição (Opcional)</label>
+        <label className="block text-sm font-medium text-foreground">Breve Descrição (Opcional)</label>
         <textarea
           {...register('description')}
           rows={3}
-          className="mt-1 block w-full border border-gray-300 rounded-md p-2 focus:ring-[#15363D] focus:border-[#15363D]"
+          className="mt-1 block w-full rounded-md border border-input p-2 focus:border-primary focus:ring-primary"
         />
       </div>
 
       <button
         type="submit"
         disabled={isSubmitting}
-        className="mt-2 w-full bg-[#15363D] text-white py-2 px-4 rounded-md font-semibold hover:bg-[#0f272c] transition-colors disabled:opacity-70"
+        className="mt-2 w-full rounded-md bg-primary px-4 py-2 font-semibold text-primary-foreground transition-colors hover:bg-primary/90 disabled:opacity-70"
       >
         {isSubmitting ? 'Enviando...' : 'Enviar Solicitação'}
       </button>
