@@ -114,94 +114,91 @@ export default function Home() {
         {/* 3. O Diferencial Tecnológico (Seção Cazuá) - Layout assimétrico e fluido */}
         <section
           id="cazua"
-          className="relative bg-background min-h-dvh py-4 md:py-4 scroll-mt-20 overflow-hidden"
+          className="relative bg-background md:min-h-dvh flex items-center py-2 md:py-0 scroll-mt-10 overflow-hidden"
         >
-          <div className="mx-auto max-w-7xl px-4">
+          <div className="mx-auto max-w-7xl w-full px-4 relative z-10">
 
             {/* Elemento decorativo de fundo sutil */}
-            <div className="pointer-events-none absolute top-1/2 left-1/2 hidden h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/5 blur-3xl lg:block" />
+            <div className="pointer-events-none absolute top-1/2 left-1/2 hidden h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/5 blur-3xl lg:block -z-10" />
 
-            <div className="relative grid items-center gap-12 md:grid-cols-12 lg:gap-16">
+            <div className="grid items-center gap-8 md:grid-cols-12 lg:gap-16">
 
-              {/* Imagem do Sistema Cazuá */}
-              <div className="relative order-2 md:order-1 md:col-span-6">
-                <div className="relative aspect-video rounded-2xl border border-border bg-card shadow-2xl md:aspect-[4/3] overflow-hidden">
-                  <Image
-                    src="/assets/template-cazua.webp"
-                    alt="Interface do Sistema Cazuá - Dashboard de monitoramento de obras"
-                    fill
-                    sizes="(max-w-7xl) 50vw, 100vw"
-                    priority
-                    className="object-contain p-4 transition-transform duration-700 hover:scale-[1.02] md:p-8"
-                  />
-                  {/* Badge flutuante indicando "Live" */}
-                  <div className="absolute top-4 right-4 flex items-center gap-1.5 rounded-full border border-border bg-background/90 px-3 py-1.5 text-xs font-medium text-primary shadow-lg backdrop-blur-sm select-none">
-                    <span className="h-2 w-2 animate-pulse rounded-full bg-primary" />
-                    Dados em Tempo Real
-                  </div>
+              {/* Imagem do Sistema Cazuá - Agora fluida e sem caixa rígida */}
+              <div className="relative order-2 md:order-1 md:col-span-6 w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[550px]">
+                <Image
+                  src="/assets/template-cazua.webp"
+                  alt="Interface do Sistema Cazuá - Dashboard de monitoramento de obras"
+                  fill
+                  sizes="(max-w-7xl) 50vw, 100vw"
+                  priority
+                  className="object-contain md:object-cover rounded-xl drop-shadow-2xl"
+                />
+                {/* Badge flutuante alinhado de forma mais discreta */}
+                <div className="absolute bottom-4 left-4 flex items-center gap-1.5 rounded-full border border-border bg-background/95 px-3 py-1.5 text-xs font-medium text-primary shadow-md backdrop-blur-sm select-none">
+                  <span className="h-2 w-2 animate-pulse rounded-full bg-primary" />
+                  Dados em Tempo Real
                 </div>
-                {/* Elementos decorativos flutuantes */}
-                <div className="absolute -bottom-6 -left-6 hidden h-32 w-32 rounded-full border-2 border-primary/10 blur-xl lg:block" />
-                <div className="absolute top-20 -right-8 hidden h-24 w-24 rounded-full border-2 border-primary/5 blur-xl lg:block" />
               </div>
 
-              {/* Conteúdo textual */}
-              <div className="order-1 space-y-6 md:order-2 md:col-span-6 lg:pl-8">
-                <div className="inline-flex items-center gap-3 rounded-full border border-primary/20 bg-primary/10 px-4 py-1.5 text-xs md:text-sm font-medium text-primary w-fit">
+              {/* Conteúdo textual - Compactado verticalmente para caber na dobra da tela */}
+              <div className="order-1 md:order-2 md:col-span-6 lg:pl-4 space-y-2">
+                <div className="inline-flex items-center gap-3 rounded-full border border-primary/20 bg-primary/10 px-4 py-1 text-xs font-medium text-primary w-fit">
                   <span className="h-2 w-2 animate-pulse rounded-full bg-primary" />
                   Tecnologia Própria
                 </div>
 
-                <h2 className="text-3xl font-bold tracking-tight text-foreground md:text-4xl">
+                <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl md:text-4xl">
                   Transparência e Controle de Dados
                 </h2>
 
-                <p className="text-base md:text-lg leading-relaxed text-muted-foreground">
+                <p className="text-sm md:text-base leading-relaxed text-muted-foreground max-w-xl">
                   A Costa Marinho Engenharia opera sob infraestrutura tecnológica própria. O SaaS Cazuá garante acesso ininterrupto aos parâmetros da sua obra:
                 </p>
 
-                {/* Grid de Recursos */}
-                <div className="grid gap-4 pt-2 sm:grid-cols-2">
+                {/* Lista de Recursos Ultra-Compacta (Estilo Linha/Row para economizar espaço vertical) */}
+                <div className="space-y-1 pt-1">
                   {/* Card 1 */}
-                  <div className="group rounded-xl border border-border bg-card p-5 transition-all duration-300 hover:border-primary/40 hover:shadow-md">
-                    <div className="mb-3 w-fit rounded-lg bg-primary/10 p-2.5 transition-colors group-hover:bg-primary/20">
-                      <Camera className="h-5 w-5 text-primary" />
+                  <div className="group flex items-start gap-4 rounded-xl border border-border/60 bg-card/50 p-4 transition-all duration-300 hover:border-primary/30 hover:bg-card">
+                    <div className="rounded-lg bg-primary/10 p-2 transition-colors group-hover:bg-primary/20 shrink-0">
+                      <Camera className="h-4 w-4 text-primary" />
                     </div>
-                    <strong className="mb-1.5 block font-semibold text-foreground">Diário de Obra Digital</strong>
-                    <span className="block text-sm leading-relaxed text-muted-foreground">Relatórios fotográficos e registro descritivo de atividades executadas in loco.</span>
+                    <div>
+                      <strong className="block text-sm font-semibold text-foreground mb-0.5">Diário de Obra Digital</strong>
+                      <span className="block text-sm leading-relaxed text-muted-foreground">Relatórios fotográficos e registro descritivo de atividades executadas in loco.</span>
+                    </div>
                   </div>
 
                   {/* Card 2 */}
-                  <div className="group rounded-xl border border-border bg-card p-5 transition-all duration-300 hover:border-primary/40 hover:shadow-md">
-                    <div className="mb-3 w-fit rounded-lg bg-primary/10 p-2.5 transition-colors group-hover:bg-primary/20">
-                      <LineChart className="h-5 w-5 text-primary" />
+                  <div className="group flex items-start gap-4 rounded-xl border border-border/60 bg-card/50 p-4 transition-all duration-300 hover:border-primary/30 hover:bg-card">
+                    <div className="rounded-lg bg-primary/10 p-2 transition-colors group-hover:bg-primary/20 shrink-0">
+                      <LineChart className="h-4 w-4 text-primary" />
                     </div>
-                    <strong className="mb-1.5 block font-semibold text-foreground">Avanço Físico-Financeiro</strong>
-                    <span className="block text-sm leading-relaxed text-muted-foreground">Acompanhamento de curva S, equalizando cronograma planejado e realizado.</span>
+                    <div>
+                      <strong className="block text-sm font-semibold text-foreground mb-0.5">Avanço Físico-Financeiro</strong>
+                      <span className="block text-sm leading-relaxed text-muted-foreground">Acompanhamento de curva S, equalizando cronograma planejado e realizado.</span>
+                    </div>
                   </div>
 
-                  {/* Card 3 (Ocupa 2 colunas no desktop) */}
-                  <div className="group rounded-xl border border-border bg-card p-5 transition-all duration-300 hover:border-primary/40 hover:shadow-md sm:col-span-2">
-                    <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
-                      <div className="rounded-lg bg-primary/10 p-2.5 transition-colors group-hover:bg-primary/20 shrink-0">
-                        <FileText className="h-5 w-5 text-primary" />
-                      </div>
-                      <div>
-                        <strong className="mb-1 block font-semibold text-foreground">Gestão de Documentos e Projetos</strong>
-                        <span className="block text-sm leading-relaxed text-muted-foreground">Repositório centralizado para laudos, projetos básicos, executivos e ARTs.</span>
-                      </div>
+                  {/* Card 3 */}
+                  <div className="group flex items-start gap-4 rounded-xl border border-border/60 bg-card/50 p-4 transition-all duration-300 hover:border-primary/30 hover:bg-card">
+                    <div className="rounded-lg bg-primary/10 p-2 transition-colors group-hover:bg-primary/20 shrink-0">
+                      <FileText className="h-4 w-4 text-primary" />
+                    </div>
+                    <div>
+                      <strong className="block text-sm font-semibold text-foreground mb-0.5">Gestão de Documentos e Projetos</strong>
+                      <span className="block text-sm leading-relaxed text-muted-foreground">Repositório centralizado para laudos, projetos básicos, executivos e ARTs.</span>
                     </div>
                   </div>
                 </div>
 
                 {/* CTA */}
-                <div className="pt-2">
+                <div className="pt-1">
                   <Link
                     href="#contato"
-                    className="inline-flex items-center gap-2 font-semibold text-primary transition-all hover:gap-3 group"
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-primary transition-all hover:gap-3 group"
                   >
                     Ver demonstração do sistema
-                    <ChevronRight className="h-5 w-5 transition-transform group-hover:translate-x-0.5" />
+                    <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                   </Link>
                 </div>
               </div>
