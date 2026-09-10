@@ -27,13 +27,20 @@ export default function Home() {
                 Contato
               </Link>
             </div>
+
             <Link
               href="https://costamarinhoengenharia.grupocazua.com.br/login"
-              className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-2.5 text-primary-foreground transition-colors hover:bg-primary/80"
+              className="inline-flex items-center gap-2 rounded-md bg-primary px-4 py-2.5 text-primary-foreground transition-colors hover:bg-primary/80 whitespace-nowrap md:px-6"
             >
-              Área do Cliente
-              <ChevronRight className="h-4 w-4" />
+              {/* Texto visível APENAS em telas pequenas */}
+              <span className="md:hidden">Login</span>
+
+              {/* Texto visível APENAS em telas médias/grandes (computador) */}
+              <span className="hidden md:inline">Área do Cliente</span>
+
+              <ChevronRight className="h-4 w-4 shrink-0" />
             </Link>
+
           </nav>
         </div>
       </header>
