@@ -210,7 +210,6 @@ export default function Home() {
               <p className="mt-2 max-w-2xl text-muted-foreground">Soluções de engenharia civil pautadas em normativas vigentes e precisão estrutural.</p>
             </div>
 
-            {/* Grid imitando malha estrutural */}
             <div className="grid gap-px border border-border bg-border md:grid-cols-3 transition-all duration-300">
 
               {/* CARD 1 */}
@@ -245,60 +244,98 @@ export default function Home() {
                   Investigação patológica, emissão de laudos periciais e diagnóstico de falhas construtivas. Especificação técnica de reforços estruturais e soluções definitivas para anomalias em edificações.
                 </p>
               </div>
-
             </div>
-
           </div>
+          <ScrollIndicator
+            href="#autoridade"
+            ariaLabel="Rolar para a seção de Autoridade e Experiência Técnica"
+            colorClass="text-primary/60 group-hover:text-primary"
+          />
         </section>
 
         {/* 5. Autoridade e Experiência Técnica - Fundação (Bloco Sólido) */}
-        <section className="border-b-8 border-primary-foreground/10 bg-primary py-24 text-primary-foreground">
+        <section
+          id="autoridade"
+          className="relative min-h-dvh border-b-8 border-primary-foreground/10 bg-primary py-24 text-primary-foreground scroll-mt-10 overflow-hidden">
           <div className="mx-auto max-w-4xl space-y-8 px-4 text-center">
             <h2 className="font-heading text-3xl font-bold">Protocolos de Fiscalização aplicados à Iniciativa Privada.</h2>
             <p className="font-sans text-lg leading-relaxed text-primary-foreground/80">
               Operamos com a expertise adquirida na coordenação e fiscalização de obras de alta complexidade. A Costa Marinho Engenharia implementa matrizes de risco, planejamento estratégico e rastreabilidade documental ponta a ponta, assegurando integridade e conformidade ao investimento.
             </p>
           </div>
+          <ScrollIndicator
+            href="#contato"
+            ariaLabel="Rolar para a seção de Contato"
+          // colorClass="text-primary/60 group-hover:text-primary"
+          />
         </section>
       </main>
 
-      {/* 6. Rodapé (Footer) e Captura */}
-      <footer id="contato" className="bg-foreground py-16 text-background">
-        <div className="mx-auto grid max-w-7xl items-start gap-16 px-4 md:grid-cols-2">
-          <div className="space-y-8">
-            {/* O LogoBloco já possui tratamento para dark theme caso configurado via props */}
-            <LogoBloco href={'/'} theme={'light'} className="w-48" />
-            <div className="grid grid-cols-2 gap-4 text-sm text-muted">
-              <div>
-                <strong className="mb-1 block text-background">Registro CREA</strong>
-                <span>MG-000000</span>
+      <footer
+        id="contato"
+        className="relative bg-foreground py-12 text-background scroll-mt-20 overflow-hidden md:min-h-dvh md:flex md:flex-col md:justify-between md:py-16"
+      >
+        <div className="mx-auto max-w-7xl w-full px-4 space-y-12 md:space-y-16 flex-1 flex flex-col justify-center">
+
+          {/* Bloco Superior: Formulário de Captura Horizontal */}
+          <div className="border-t-4 border-primary bg-background p-6 md:p-10 text-foreground shadow-2xl">
+            <div className="grid gap-6 md:grid-cols-12 md:items-center">
+
+              {/* Chamada do Formulário */}
+              <div className="md:col-span-4 space-y-1">
+                <h3 className="text-xl font-bold text-primary tracking-tight md:text-2xl">
+                  Como podemos ajudar você?
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  Insira seus dados para receber o contato do nosso setor de engenharia.
+                </p>
               </div>
-              <div>
-                <strong className="mb-1 block text-background">CNPJ</strong>
-                <span>00.000.000/0000-00</span>
+              {/* Formulário de Captura */}
+              <div className="md:col-span-8">
+                <LeadForm className="grid gap-4 sm:grid-cols-3 md:items-center" />
               </div>
-              <div className="col-span-2">
-                <strong className="mb-1 block text-background">Endereço</strong>
-                <span>Conselheiro Lafaiete, MG</span>
-              </div>
-              <div className="col-span-2">
-                <strong className="mb-1 block text-background">Contato Técnico</strong>
-                <span>contato@costamarinho.com.br</span>
-              </div>
+
             </div>
           </div>
 
-          <div className="rounded-sm border-t-4 border-primary bg-background p-8 text-foreground shadow-lg">
-            <h3 className="mb-6 text-xl font-bold text-primary">Iniciar Especificação Técnica</h3>
-            <LeadForm />
+          {/* Bloco Inferior: Informações da Empresa (Lado a Lado no Desktop) */}
+          <div className="grid gap-8 border-t border-muted-foreground/20 pt-10 md:grid-cols-12 md:items-start md:gap-12">
+
+            {/* Coluna do Logo */}
+            <div className="md:col-span-4 flex flex-col justify-between h-full">
+              <LogoBloco href={'/'} theme={'light'} className="w-44 md:w-52" />
+            </div>
+
+            {/* Coluna das Informações em Grid Compacto */}
+            <div className="grid grid-cols-2 gap-x-6 gap-y-4 text-sm text-muted md:col-span-8 md:grid-cols-4">
+              <div>
+                <strong className="mb-0.5 block text-xs font-semibold uppercase tracking-wider text-background/70">Registro CREA</strong>
+                <span className="text-background font-medium">MG-000000</span>
+              </div>
+              <div>
+                <strong className="mb-0.5 block text-xs font-semibold uppercase tracking-wider text-background/70">CNPJ</strong>
+                <span className="text-background font-medium">00.000.000/0000-00</span>
+              </div>
+              <div>
+                <strong className="mb-0.5 block text-xs font-semibold uppercase tracking-wider text-background/70">Endereço</strong>
+                <span className="text-background font-medium block max-w-[180px]">Conselheiro Lafaiete, MG</span>
+              </div>
+              <div>
+                <strong className="mb-0.5 block text-xs font-semibold uppercase tracking-wider text-background/70">Contato Técnico</strong>
+                <span className="text-background font-medium block truncate">contato@costamarinho.com.br</span>
+              </div>
+            </div>
+
           </div>
         </div>
 
-        <div className="mx-auto mt-16 flex max-w-7xl flex-col items-center justify-between border-t border-muted-foreground/30 px-4 pt-8 text-xs text-muted md:flex-row">
+        {/* Direitos Autorais e Créditos (Rodapé do Rodapé) */}
+        <div className="mx-auto w-full max-w-7xl border-t border-muted-foreground/10 px-4 pt-6 mt-12 text-xs text-muted/60 flex flex-col items-center justify-between gap-2 md:mt-0 md:flex-row">
           <p>© {new Date().getFullYear()} Costa Marinho Engenharia. Todos os direitos reservados.</p>
           <p>Operado pelo Sistema Cazuá.</p>
         </div>
       </footer>
+
     </div>
   );
 }
