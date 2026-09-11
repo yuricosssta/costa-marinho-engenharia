@@ -6,6 +6,7 @@ import Link from 'next/link';
 
 import { LeadForm } from '@/components/LeadForm';
 import { LogoBloco } from '@/components/LogoBloco';
+import ScrollIndicator from '@/components/ScrollIndicator';
 
 export default function Home() {
   return (
@@ -48,10 +49,7 @@ export default function Home() {
       <main>
         {/* 2. Primeira Dobra (Hero Section) - Layout fluido e imersivo */}
         <section className="relative w-full min-h-dvh overflow-hidden border-b border-border bg-background">
-          {/* Mudamos de absolute inset-0 para h-full min-h-dvh para forçar o container a esticar */}
           <div className="relative w-full min-h-dvh z-0">
-
-            {/* CORREÇÃO: Removidas as alturas em pixels e adicionado min-h-dvh para ocupar a tela toda */}
             <div className="relative w-full min-h-dvh bg-secondary">
               <Image
                 src="/assets/hero-obra.webp"
@@ -92,21 +90,11 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Indicador de scroll sutil (Z-index aumentado para ficar clicável sobre a imagem) */}
-            <Link
+            <ScrollIndicator
               href="#cazua"
-              className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce cursor-pointer group z-20 md:right-12 md:bottom-16 md:left-auto md:translate-x-0"
-              aria-label="Rolar para a seção Cazuá"
-            >
-              <svg
-                className="h-12 w-12 text-white/60 transition-colors group-hover:text-white"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-              </svg>
-            </Link>
+              ariaLabel="Rolar para a seção de Cazua"
+            // colorClass="text-primary/60 group-hover:text-primary"
+            />
 
           </div>
         </section>
@@ -205,10 +193,17 @@ export default function Home() {
 
             </div>
           </div>
+          <ScrollIndicator
+            href="#servicos"
+            ariaLabel="Rolar para a seção de Serviços"
+            colorClass="text-primary/60 group-hover:text-primary"
+          />
         </section>
 
         {/* 4. Linha de Serviços - Blocos Estruturais */}
-        <section id="servicos" className="border-y min-h-dvh border-border bg-secondary py-24">
+        <section
+          id="servicos"
+          className="relative bg-secondary border-y min-h-dvh flex items-center border-border py-2 md:py-0 scroll-mt-10 overflow-hidden">
           <div className="mx-auto max-w-7xl px-4">
             <div className="mb-16 border-l-4 border-primary pl-6">
               <h2 className="text-3xl font-bold text-primary">Escopo de Atuação Técnica</h2>
@@ -216,29 +211,43 @@ export default function Home() {
             </div>
 
             {/* Grid imitando malha estrutural */}
-            <div className="grid gap-px border border-border bg-border md:grid-cols-3">
-              <div className="flex h-full flex-col bg-card p-10 transition-colors hover:bg-background">
-                <Building className="mb-6 h-10 w-10 text-primary" />
-                <h3 className="mb-4 text-xl font-bold text-foreground">Execução e Gerenciamento</h3>
-                <p className="mt-auto text-sm leading-relaxed text-muted-foreground">
+            <div className="grid gap-px border border-border bg-border md:grid-cols-3 transition-all duration-300">
+
+              {/* CARD 1 */}
+              <div className="group flex h-full flex-col bg-card p-10 transition-colors duration-300 hover:bg-primary">
+                <Building className="mb-6 h-10 w-10 text-primary transition-colors duration-300 group-hover:text-primary-foreground" />
+                <h3 className="mb-4 text-xl font-bold text-foreground transition-colors duration-300 group-hover:text-primary-foreground">
+                  Execução e Gerenciamento
+                </h3>
+                <p className="mt-auto text-sm leading-relaxed text-muted-foreground transition-colors duration-300 group-hover:text-primary-foreground/90">
                   Construção operada sob matriz de fiscalização rigorosa. Aplicamos parâmetros de controle de qualidade e gestão de suprimentos para garantir o cumprimento de baseline em projetos corporativos e residenciais de alto padrão.
                 </p>
               </div>
-              <div className="flex h-full flex-col bg-card p-10 transition-colors hover:bg-background">
-                <LayoutTemplate className="mb-6 h-10 w-10 text-primary" />
-                <h3 className="mb-4 text-xl font-bold text-foreground">Projetos Estruturais</h3>
-                <p className="mt-auto text-sm leading-relaxed text-muted-foreground">
+
+              {/* CARD 2 */}
+              <div className="group flex h-full flex-col bg-card p-10 transition-colors duration-300 hover:bg-primary">
+                <LayoutTemplate className="mb-6 h-10 w-10 text-primary transition-colors duration-300 group-hover:text-primary-foreground" />
+                <h3 className="mb-4 text-xl font-bold text-foreground transition-colors duration-300 group-hover:text-primary-foreground">
+                  Projetos Estruturais
+                </h3>
+                <p className="mt-auto text-sm leading-relaxed text-muted-foreground transition-colors duration-300 group-hover:text-primary-foreground/90">
                   Dimensionamento de estruturas em concreto armado e fundações. Foco irrestrito em segurança normativa (ABNT NBR 6118) aliado à otimização quantitativa de aço e concreto para viabilidade econômica.
                 </p>
               </div>
-              <div className="flex h-full flex-col bg-card p-10 transition-colors hover:bg-background">
-                <ShieldAlert className="mb-6 h-10 w-10 text-primary" />
-                <h3 className="mb-4 text-xl font-bold text-foreground">Engenharia Diagnóstica</h3>
-                <p className="mt-auto text-sm leading-relaxed text-muted-foreground">
+
+              {/* CARD 3 */}
+              <div className="group flex h-full flex-col bg-card p-10 transition-colors duration-300 hover:bg-primary">
+                <ShieldAlert className="mb-6 h-10 w-10 text-primary transition-colors duration-300 group-hover:text-primary-foreground" />
+                <h3 className="mb-4 text-xl font-bold text-foreground transition-colors duration-300 group-hover:text-primary-foreground">
+                  Engenharia Diagnóstica
+                </h3>
+                <p className="mt-auto text-sm leading-relaxed text-muted-foreground transition-colors duration-300 group-hover:text-primary-foreground/90">
                   Investigação patológica, emissão de laudos periciais e diagnóstico de falhas construtivas. Especificação técnica de reforços estruturais e soluções definitivas para anomalias em edificações.
                 </p>
               </div>
+
             </div>
+
           </div>
         </section>
 
