@@ -310,19 +310,19 @@ export default function Home() {
             <div className="grid grid-cols-2 gap-x-6 gap-y-4 text-sm text-muted md:col-span-8 md:grid-cols-4">
               <div>
                 <strong className="mb-0.5 block text-xs font-semibold uppercase tracking-wider text-background/70">Registro CREA</strong>
-                <span className="text-background font-medium">MG-000000</span>
+                <span className="text-background font-medium">nº 0001670638</span>
               </div>
               <div>
                 <strong className="mb-0.5 block text-xs font-semibold uppercase tracking-wider text-background/70">CNPJ</strong>
-                <span className="text-background font-medium">00.000.000/0000-00</span>
+                <span className="text-background font-medium">59.864.378/0001-86</span>
               </div>
               <div>
                 <strong className="mb-0.5 block text-xs font-semibold uppercase tracking-wider text-background/70">Endereço</strong>
-                <span className="text-background font-medium block max-w-[180px]">Conselheiro Lafaiete, MG</span>
+                <span className="text-background font-medium block">Conselheiro Lafaiete, MG</span>
               </div>
               <div>
                 <strong className="mb-0.5 block text-xs font-semibold uppercase tracking-wider text-background/70">Contato Técnico</strong>
-                <span className="text-background font-medium block truncate">contato@costamarinho.com.br</span>
+                <span className="text-background font-medium block">contato@costamarinho.com.br</span>
               </div>
             </div>
 
