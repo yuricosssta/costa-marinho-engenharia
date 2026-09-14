@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { LeadForm } from '@/components/LeadForm';
 import { LogoBloco } from '@/components/LogoBloco';
 import ScrollIndicator from '@/components/ScrollIndicator';
+import CostaMarinhoLogo from '@/components/LogoCostaMarinho';
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4">
           <div className="flex items-center">
             <LogoBloco href={'/'} theme={'light'} />
+            {/* <CostaMarinhoLogo /> */}
           </div>
           <nav className="items-center gap-8 text-sm font-medium md:flex">
             {/* Esta div agora fica ESCONDIDA por padrão (celular) e APARECE como flex em telas md (computador) */}

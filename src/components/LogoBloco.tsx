@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { z } from 'zod';
 
 import { cn } from '@/lib/utils';
+import CostaMarinhoLogo from './LogoCostaMarinho';
 
 const logoPropsSchema = z.object({
   className: z.string().optional(),
@@ -33,14 +34,15 @@ export function LogoBloco(props: LogoProps) {
       aria-label="Página Inicial da Costa Marinho Engenharia"
     >
       <div className="relative h-12 w-[280px]">
-        <Image
+        {/* <Image
           src="/images/logo.png"
           alt="Logotipo Costa Marinho Engenharia"
           fill
           priority
           sizes="(max-width: 768px) 200px, 280px"
           className={cn("object-contain", themeClasses[theme])}
-        />
+        /> */}
+        <CostaMarinhoLogo />
       </div>
     </Link>
   );
