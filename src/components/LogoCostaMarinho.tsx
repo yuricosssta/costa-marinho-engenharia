@@ -100,13 +100,13 @@ export default function CostaMarinhoLogo({
           display: flex;
           flex-direction: column;
           justify-content: center;
-          gap: calc(var(--cm-size) * 0.14);
+          gap: calc(var(--cm-size) * 0.01);
         }
 
         .cm-logo__title {
           font-family: "Poppins", "Montserrat", ui-sans-serif, system-ui, sans-serif;
           font-weight: 800;
-          font-size: calc(var(--cm-size) * 0.46);
+          font-size: calc(var(--cm-size) * 0.42);
           letter-spacing: 0.01em;
           text-transform: uppercase;
           white-space: nowrap;
