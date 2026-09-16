@@ -25,7 +25,7 @@ export default function ScrollIndicator({
   return (
     <Link
       href={href}
-      className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce cursor-pointer group z-20 md:right-12 md:bottom-16 md:left-auto md:translate-x-0"
+      className="group absolute bottom-10 left-1/2 z-20 -translate-x-1/2 animate-bounce cursor-pointer md:right-12 md:bottom-16 md:left-auto md:translate-x-0"
       aria-label={ariaLabel}
     >
       <svg

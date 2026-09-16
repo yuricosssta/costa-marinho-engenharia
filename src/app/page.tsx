@@ -18,11 +18,10 @@ export default function Home() {
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4">
           <div className="flex items-center">
             <LogoBloco href={'/'} theme={'light'} />
-            {/* <CostaMarinhoLogo /> */}
           </div>
           <nav className="items-center gap-8 text-sm font-medium md:flex">
             {/* Esta div agora fica ESCONDIDA por padrão (celular) e APARECE como flex em telas md (computador) */}
-            <div className="hidden md:flex gap-8">
+            <div className="hidden gap-8 md:flex">
               <Link href="#servicos" className="text-foreground transition-colors hover:text-primary">
                 Serviços
               </Link>
@@ -33,7 +32,7 @@ export default function Home() {
 
             <Link
               href="https://costamarinhoengenharia.grupocazua.com.br/login"
-              className="inline-flex items-center gap-2 rounded-md bg-primary px-4 py-2.5 text-primary-foreground transition-colors hover:bg-primary/80 whitespace-nowrap md:px-6"
+              className="inline-flex items-center gap-2 rounded-md bg-primary px-4 py-2.5 whitespace-nowrap text-primary-foreground transition-colors hover:bg-primary/80 md:px-6"
             >
               {/* Texto visível APENAS em telas pequenas */}
               <span className="md:hidden">Login</span>
@@ -50,9 +49,9 @@ export default function Home() {
 
       <main>
         {/* 2. Primeira Dobra (Hero Section) - Layout fluido e imersivo */}
-        <section className="relative w-full min-h-dvh overflow-hidden border-b border-border bg-background">
-          <div className="relative w-full min-h-dvh z-0">
-            <div className="relative w-full min-h-dvh bg-secondary">
+        <section className="relative min-h-dvh w-full overflow-hidden border-b border-border bg-background">
+          <div className="relative z-0 min-h-dvh w-full">
+            <div className="relative min-h-dvh w-full bg-secondary">
               <Image
                 src="/assets/hero-obra.webp"
                 alt="Execução de obra gerenciada pela Costa Marinho"
@@ -72,14 +71,14 @@ export default function Home() {
                     Engenharia e Construção com Rigor Técnico
                   </h1>
                   <p className="max-w-xl text-lg leading-relaxed font-normal text-white/90 drop-shadow-md md:text-xl">
-                    Projetos estruturais, investigações patológicas e execução de obras. Monitoramento em tempo real do avanço físico-financeiro via ecossistema Cazuá.
+                    Projetos, investigações patológicas e execução de obras. Monitoramento remoto em tempo real do avanço físico-financeiro da sua obra via ecossistema próprio.
                   </p>
                   <div className="flex flex-col gap-4 pt-4 sm:flex-row">
                     <Link
                       href="#contato"
                       className="rounded-sm bg-white px-6 py-3.5 text-center font-semibold text-primary drop-shadow-lg transition-colors hover:bg-white/90"
                     >
-                      Solicitar Avaliação Técnico
+                      Solicitar Avaliação Técnica
                     </Link>
                     <Link
                       href="#cazua"
@@ -104,24 +103,24 @@ export default function Home() {
         {/* 3. O Diferencial Tecnológico (Seção Cazuá) - Layout assimétrico e fluido */}
         <section
           id="cazua"
-          className="relative bg-background md:min-h-dvh flex items-center py-2 md:py-0 scroll-mt-10 overflow-hidden"
+          className="relative flex scroll-mt-10 items-center overflow-hidden bg-background py-2 md:min-h-dvh md:py-0"
         >
-          <div className="mx-auto max-w-7xl w-full px-4 relative z-10">
+          <div className="relative z-10 mx-auto w-full max-w-7xl px-4">
 
             {/* Elemento decorativo de fundo sutil */}
-            <div className="pointer-events-none absolute top-1/2 left-1/2 hidden h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/5 blur-3xl lg:block -z-10" />
+            <div className="pointer-events-none absolute top-1/2 left-1/2 -z-10 hidden h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/5 blur-3xl lg:block" />
 
             <div className="grid items-center gap-8 md:grid-cols-12 lg:gap-16">
 
               {/* Imagem do Sistema Cazuá - Agora fluida e sem caixa rígida */}
-              <div className="relative order-2 md:order-1 md:col-span-6 w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[550px]">
+              <div className="relative order-2 h-[300px] w-full sm:h-[400px] md:order-1 md:col-span-6 md:h-[500px] lg:h-[550px]">
                 <Image
                   src="/assets/template-cazua.webp"
                   alt="Interface do Sistema Cazuá - Dashboard de monitoramento de obras"
                   fill
                   sizes="(max-w-7xl) 50vw, 100vw"
                   priority
-                  className="object-contain md:object-cover rounded-xl drop-shadow-2xl"
+                  className="rounded-xl object-contain drop-shadow-2xl md:object-cover"
                 />
                 {/* Badge flutuante alinhado de forma mais discreta */}
                 <div className="absolute bottom-4 left-4 flex items-center gap-1.5 rounded-full border border-border bg-background/95 px-3 py-1.5 text-xs font-medium text-primary shadow-md backdrop-blur-sm select-none">
@@ -131,8 +130,8 @@ export default function Home() {
               </div>
 
               {/* Conteúdo textual - Compactado verticalmente para caber na dobra da tela */}
-              <div className="order-1 md:order-2 md:col-span-6 lg:pl-4 space-y-2">
-                <div className="inline-flex items-center gap-3 rounded-full border border-primary/20 bg-primary/10 px-4 py-1 text-xs font-medium text-primary w-fit">
+              <div className="order-1 space-y-2 md:order-2 md:col-span-6 lg:pl-4">
+                <div className="inline-flex w-fit items-center gap-3 rounded-full border border-primary/20 bg-primary/10 px-4 py-1 text-xs font-medium text-primary">
                   <span className="h-2 w-2 animate-pulse rounded-full bg-primary" />
                   Tecnologia Própria
                 </div>
@@ -141,41 +140,40 @@ export default function Home() {
                   Transparência e Controle de Dados
                 </h2>
 
-                <p className="text-sm md:text-base leading-relaxed text-muted-foreground max-w-xl">
-                  A Costa Marinho Engenharia opera sob infraestrutura tecnológica própria. O SaaS Cazuá garante acesso ininterrupto aos parâmetros da sua obra:
+                <p className="max-w-xl text-sm leading-relaxed text-muted-foreground md:text-base">
+                  A Costa Marinho Engenharia opera sob infraestrutura tecnológica própria, garantindo acesso ininterrupto aos parâmetros mais atuais de monitoramento da sua obra:
                 </p>
 
-                {/* Lista de Recursos Ultra-Compacta (Estilo Linha/Row para economizar espaço vertical) */}
                 <div className="space-y-1 pt-1">
                   {/* Card 1 */}
                   <div className="group flex items-start gap-4 rounded-xl border border-border/60 bg-card/50 p-4 transition-all duration-300 hover:border-primary/30 hover:bg-card">
-                    <div className="rounded-lg bg-primary/10 p-2 transition-colors group-hover:bg-primary/20 shrink-0">
+                    <div className="shrink-0 rounded-lg bg-primary/10 p-2 transition-colors group-hover:bg-primary/20">
                       <Camera className="h-4 w-4 text-primary" />
                     </div>
                     <div>
-                      <strong className="block text-sm font-semibold text-foreground mb-0.5">Diário de Obra Digital</strong>
+                      <strong className="mb-0.5 block text-sm font-semibold text-foreground">Diário de Obra Digital</strong>
                       <span className="block text-sm leading-relaxed text-muted-foreground">Relatórios fotográficos e registro descritivo de atividades executadas in loco.</span>
                     </div>
                   </div>
 
                   {/* Card 2 */}
                   <div className="group flex items-start gap-4 rounded-xl border border-border/60 bg-card/50 p-4 transition-all duration-300 hover:border-primary/30 hover:bg-card">
-                    <div className="rounded-lg bg-primary/10 p-2 transition-colors group-hover:bg-primary/20 shrink-0">
+                    <div className="shrink-0 rounded-lg bg-primary/10 p-2 transition-colors group-hover:bg-primary/20">
                       <LineChart className="h-4 w-4 text-primary" />
                     </div>
                     <div>
-                      <strong className="block text-sm font-semibold text-foreground mb-0.5">Avanço Físico-Financeiro</strong>
+                      <strong className="mb-0.5 block text-sm font-semibold text-foreground">Avanço Físico-Financeiro</strong>
                       <span className="block text-sm leading-relaxed text-muted-foreground">Acompanhamento de curva S, equalizando cronograma planejado e realizado.</span>
                     </div>
                   </div>
 
                   {/* Card 3 */}
                   <div className="group flex items-start gap-4 rounded-xl border border-border/60 bg-card/50 p-4 transition-all duration-300 hover:border-primary/30 hover:bg-card">
-                    <div className="rounded-lg bg-primary/10 p-2 transition-colors group-hover:bg-primary/20 shrink-0">
+                    <div className="shrink-0 rounded-lg bg-primary/10 p-2 transition-colors group-hover:bg-primary/20">
                       <FileText className="h-4 w-4 text-primary" />
                     </div>
                     <div>
-                      <strong className="block text-sm font-semibold text-foreground mb-0.5">Gestão de Documentos e Projetos</strong>
+                      <strong className="mb-0.5 block text-sm font-semibold text-foreground">Gestão de Documentos e Projetos</strong>
                       <span className="block text-sm leading-relaxed text-muted-foreground">Repositório centralizado para laudos, projetos básicos, executivos e ARTs.</span>
                     </div>
                   </div>
@@ -185,9 +183,9 @@ export default function Home() {
                 <div className="pt-1">
                   <Link
                     href="#contato"
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-primary transition-all hover:gap-3 group"
+                    className="group inline-flex items-center gap-2 text-sm font-semibold text-primary transition-all hover:gap-3"
                   >
-                    Ver demonstração do sistema
+                    Vamos construir com previsibilidade
                     <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                   </Link>
                 </div>
@@ -205,14 +203,14 @@ export default function Home() {
         {/* 4. Linha de Serviços - Blocos Estruturais */}
         <section
           id="servicos"
-          className="relative bg-secondary border-y min-h-dvh flex items-center border-border py-2 md:py-0 scroll-mt-10 overflow-hidden">
+          className="relative flex min-h-dvh scroll-mt-10 items-center overflow-hidden border-y border-border bg-secondary py-2 md:py-0">
           <div className="mx-auto max-w-7xl px-4">
             <div className="mb-16 border-l-4 border-primary pl-6">
               <h2 className="text-3xl font-bold text-primary">Escopo de Atuação Técnica</h2>
               <p className="mt-2 max-w-2xl text-muted-foreground">Soluções de engenharia civil pautadas em normativas vigentes e precisão estrutural.</p>
             </div>
 
-            <div className="grid gap-px border border-border bg-border md:grid-cols-3 transition-all duration-300">
+            <div className="grid gap-px border border-border bg-border transition-all duration-300 md:grid-cols-3">
 
               {/* CARD 1 */}
               <div className="group flex h-full flex-col bg-card p-10 transition-colors duration-300 hover:bg-primary">
@@ -221,7 +219,7 @@ export default function Home() {
                   Execução e Gerenciamento
                 </h3>
                 <p className="mt-auto text-sm leading-relaxed text-muted-foreground transition-colors duration-300 group-hover:text-primary-foreground/90">
-                  Construção operada sob matriz de fiscalização rigorosa. Aplicamos parâmetros de controle de qualidade e gestão de suprimentos para garantir o cumprimento de baseline em projetos corporativos e residenciais de alto padrão.
+                  Construção operada sob matriz de fiscalização rigorosa. Aplicamos parâmetros de controle de qualidade e gestão de suprimentos para garantir o cumprimento de prozos em projetos corporativos e residenciais de alto padrão.
                 </p>
               </div>
 
@@ -229,10 +227,10 @@ export default function Home() {
               <div className="group flex h-full flex-col bg-card p-10 transition-colors duration-300 hover:bg-primary">
                 <LayoutTemplate className="mb-6 h-10 w-10 text-primary transition-colors duration-300 group-hover:text-primary-foreground" />
                 <h3 className="mb-4 text-xl font-bold text-foreground transition-colors duration-300 group-hover:text-primary-foreground">
-                  Projetos Estruturais
+                  Projetos de Engenharia
                 </h3>
                 <p className="mt-auto text-sm leading-relaxed text-muted-foreground transition-colors duration-300 group-hover:text-primary-foreground/90">
-                  Dimensionamento de estruturas em concreto armado e fundações. Foco irrestrito em segurança normativa (ABNT NBR 6118) aliado à otimização quantitativa de aço e concreto para viabilidade econômica.
+                  Estrutural, fundações, elétrico, hidrossanitário e arquitetônico. Segurança normativa combinada com uma otimização rigorosa de aço e concreto. Evite desperdícios e tenha a viabilidade econômica para seu empreendimento.
                 </p>
               </div>
 
@@ -258,11 +256,11 @@ export default function Home() {
         {/* 5. Autoridade e Experiência Técnica - Fundação (Bloco Sólido) */}
         <section
           id="autoridade"
-          className="relative min-h-dvh border-b-8 border-primary-foreground/10 bg-primary py-24 text-primary-foreground scroll-mt-10 overflow-hidden">
+          className="relative min-h-dvh scroll-mt-10 overflow-hidden border-b-8 border-primary-foreground/10 bg-primary py-24 text-primary-foreground">
           <div className="mx-auto max-w-4xl space-y-8 px-4 text-center">
             <h2 className="font-heading text-3xl font-bold">Protocolos de Fiscalização aplicados à Iniciativa Privada.</h2>
             <p className="font-sans text-lg leading-relaxed text-primary-foreground/80">
-              Operamos com a expertise adquirida na coordenação e fiscalização de obras de alta complexidade. A Costa Marinho Engenharia implementa matrizes de risco, planejamento estratégico e rastreabilidade documental ponta a ponta, assegurando integridade e conformidade ao investimento.
+              Operamos com a expertise adquirida na coordenação e fiscalização de obras de alta complexidade. A Costa Marinho Engenharia implementa matrizes de risco, planejamento estratégico e rastreabilidade documental de ponta a ponta, assegurando integridade e conformidade ao investimento.
             </p>
           </div>
           <ScrollIndicator
@@ -275,17 +273,17 @@ export default function Home() {
 
       <footer
         id="contato"
-        className="relative bg-foreground py-12 text-background scroll-mt-20 overflow-hidden md:min-h-dvh md:flex md:flex-col md:justify-between md:py-16"
+        className="relative scroll-mt-20 overflow-hidden bg-foreground py-12 text-background md:flex md:min-h-dvh md:flex-col md:justify-between md:py-16"
       >
-        <div className="mx-auto max-w-7xl w-full px-4 space-y-12 md:space-y-16 flex-1 flex flex-col justify-center">
+        <div className="mx-auto flex w-full max-w-7xl flex-1 flex-col justify-center space-y-12 px-4 md:space-y-16">
 
           {/* Bloco Superior: Formulário de Captura Horizontal */}
-          <div className="border-t-4 border-primary bg-background p-6 md:p-10 text-foreground shadow-2xl">
+          <div className="border-t-4 border-primary bg-background p-6 text-foreground shadow-2xl md:p-10">
             <div className="grid gap-6 md:grid-cols-12 md:items-center">
 
               {/* Chamada do Formulário */}
-              <div className="md:col-span-4 space-y-1">
-                <h3 className="text-xl font-bold text-primary tracking-tight md:text-2xl">
+              <div className="space-y-1 md:col-span-4">
+                <h3 className="text-xl font-bold tracking-tight text-primary md:text-2xl">
                   Como podemos ajudar você?
                 </h3>
                 <p className="text-sm text-muted-foreground">
@@ -304,27 +302,27 @@ export default function Home() {
           <div className="grid gap-8 border-t border-muted-foreground/20 pt-10 md:grid-cols-12 md:items-start md:gap-12">
 
             {/* Coluna do Logo */}
-            <div className="md:col-span-4 flex flex-col justify-between h-full">
+            <div className="flex h-full flex-col justify-between md:col-span-4">
               <LogoBloco href={'/'} theme={'light'} className="w-44 md:w-52" />
             </div>
 
             {/* Coluna das Informações em Grid Compacto */}
             <div className="grid grid-cols-2 gap-x-6 gap-y-4 text-sm text-muted md:col-span-8 md:grid-cols-4">
               <div>
-                <strong className="mb-0.5 block text-xs font-semibold uppercase tracking-wider text-background/70">Registro CREA</strong>
-                <span className="text-background font-medium">nº 0001670638</span>
+                <strong className="mb-0.5 block text-xs font-semibold tracking-wider text-background/70 uppercase">Registro CREA</strong>
+                <span className="font-medium text-background">nº 0001670638</span>
               </div>
               <div>
-                <strong className="mb-0.5 block text-xs font-semibold uppercase tracking-wider text-background/70">CNPJ</strong>
-                <span className="text-background font-medium">59.864.378/0001-86</span>
+                <strong className="mb-0.5 block text-xs font-semibold tracking-wider text-background/70 uppercase">CNPJ</strong>
+                <span className="font-medium text-background">59.864.378/0001-86</span>
               </div>
               <div>
-                <strong className="mb-0.5 block text-xs font-semibold uppercase tracking-wider text-background/70">Endereço</strong>
-                <span className="text-background font-medium block">Conselheiro Lafaiete, MG</span>
+                <strong className="mb-0.5 block text-xs font-semibold tracking-wider text-background/70 uppercase">Endereço</strong>
+                <span className="block font-medium text-background">Conselheiro Lafaiete, MG</span>
               </div>
               <div>
-                <strong className="mb-0.5 block text-xs font-semibold uppercase tracking-wider text-background/70">Contato Técnico</strong>
-                <span className="text-background font-medium block">contato@costamarinho.com.br</span>
+                <strong className="mb-0.5 block text-xs font-semibold tracking-wider text-background/70 uppercase">Contato Técnico</strong>
+                <span className="block font-medium text-background">contato@costamarinho.com.br</span>
               </div>
             </div>
 
@@ -332,7 +330,7 @@ export default function Home() {
         </div>
 
         {/* Direitos Autorais e Créditos (Rodapé do Rodapé) */}
-        <div className="mx-auto w-full max-w-7xl border-t border-muted-foreground/10 px-4 pt-6 mt-12 text-xs text-muted/60 flex flex-col items-center justify-between gap-2 md:mt-0 md:flex-row">
+        <div className="mx-auto mt-12 flex w-full max-w-7xl flex-col items-center justify-between gap-2 border-t border-muted-foreground/10 px-4 pt-6 text-xs text-muted/60 md:mt-0 md:flex-row">
           <p>© {new Date().getFullYear()} Costa Marinho Engenharia. Todos os direitos reservados.</p>
           <p>Operado pelo Sistema Cazuá.</p>
         </div>
