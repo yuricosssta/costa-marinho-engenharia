@@ -8,17 +8,17 @@ function buildWhatsAppMessage(data: CreateLeadDto): string {
   };
 
   const lines = [
-    'Olá! Gostaria de solicitar um contato da Vanguarda Engenharia.',
-    '',
-    `👤 Nome: ${data.name}`,
-    `📱 Telefone: ${data.phone}`,
-    `🔧 Serviço: ${serviceTypeLabels[data.serviceType] || data.serviceType}`,
+    'Costa Marinho Engenharia',
+    // '',
+    `Nome: ${data.name}`,
+    `Telefone: ${data.phone}`,
+    `Serviço: ${serviceTypeLabels[data.serviceType] || data.serviceType}`,
   ];
 
   if (data.description?.trim()) {
-    lines.push(`📝 Descrição: ${data.description.trim()}`);
+    lines.push(`Descrição: ${data.description.trim()}`);
   } else {
-    lines.push('📝 Descrição: Não informada');
+    lines.push('Descrição: Não informada');
   }
 
   return lines.join('\n');
