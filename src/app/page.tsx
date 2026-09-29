@@ -307,22 +307,22 @@ export default function Home() {
             </div>
 
             {/* Coluna das Informações em Grid Compacto */}
-            <div className="grid grid-cols-2 gap-x-6 gap-y-4 text-sm text-muted md:col-span-8 md:grid-cols-4">
+            <div className="grid grid-cols-1 gap-x-6 gap-y-4 text-sm text-muted sm:grid-cols-2 md:col-span-8 md:grid-cols-4">
               <div>
                 <strong className="mb-0.5 block text-xs font-semibold tracking-wider text-background/70 uppercase">Registro CREA</strong>
-                <span className="font-medium text-background">nº 0001670638</span>
+                <span className="font-medium text-background break-words">nº 0001670638</span>
               </div>
               <div>
                 <strong className="mb-0.5 block text-xs font-semibold tracking-wider text-background/70 uppercase">CNPJ</strong>
-                <span className="font-medium text-background">59.864.378/0001-86</span>
+                <span className="font-medium text-background break-words">59.864.378/0001-86</span>
               </div>
               <div>
                 <strong className="mb-0.5 block text-xs font-semibold tracking-wider text-background/70 uppercase">Endereço</strong>
-                <span className="block font-medium text-background">Conselheiro Lafaiete, MG</span>
+                <span className="block font-medium text-background break-words">Conselheiro Lafaiete, MG</span>
               </div>
               <div>
                 <strong className="mb-0.5 block text-xs font-semibold tracking-wider text-background/70 uppercase">Contato Técnico</strong>
-                <span className="block font-medium text-background">contato@costamarinho.com.br</span>
+                <span className="block font-medium text-background break-words">contato@costamarinhoengenharia.com.br</span>
               </div>
             </div>
 
